@@ -1,0 +1,31 @@
+@import "../tpls/base.wxss";
+
+.theme {
+  margin-top: 60rpx;
+}
+.theme-list {
+  border: 1px solid #ccc;
+  margin: 10rpx auto;
+  width: 88%;
+  height: 320rpx;
+  border-radius: 8rpx;
+  box-shadow: 2px 3px 4px #ccc;
+  margin-top: 30rpx;
+}
+
+.theme-list > image {
+  height: 300rpx;
+  padding: 10rpx;
+}
+
+.home-main-header{
+  display: flex;
+  height: 60rpx;
+  color: #AB956D;
+  background-color: #fff;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 0;
+}
+

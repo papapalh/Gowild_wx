@@ -1,0 +1,38 @@
+<import src="../tpls/category/category-tpl.wxml"/>
+<view class="container category-container">
+  <view class="category-box">
+      <view class="left-box">
+        <block wx:for="{{categoryTypeArr}}">
+          <view class="menu-item {{currentMenuIndex==index?'selected':''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="changeCategory" data-title-name="{{item.name}}">
+            {{item.name}}
+          </view>
+        </block>
+    </view>
+     <view class="right-box {{transClassArr[currentMenuIndex]}}">
+
+      <view class="foods-type-box">
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[0]}}"/>
+      </view>
+      <view class="foods-type-box">
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[1]}}"/>
+      </view>
+      <view class="foods-type-box">
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[2]}}"/>
+      </view>
+      <view class="foods-type-box">
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[3]}}"/>
+      </view>
+      <view class="foods-type-box">
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[4]}}"/>
+      </view>
+      <view class="foods-type-box">
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[5]}}"/>
+      </view>
+
+    </view> 
+
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

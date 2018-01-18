@@ -1,0 +1,40 @@
+@import "../tpls/base.wxss";
+
+.container-main{
+  height: 100%;
+  width: 90%;
+  padding: 30rpx;
+}
+.my-container{
+    /* background-color:#EDEDED; */
+}
+.my-header{
+    /* background-color: #AB956D; */
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 30rpx;
+    font-size: 28rpx;
+    height: 260rpx;
+}
+
+.my-title {
+  color: #333;
+  font-size: 26rpx;
+  text-align: center;
+}
+.my-header image{
+    height: 200rpx;
+    width: 200rpx;
+    border-radius: 50%; 
+}
+
+.my-item{
+  color: #333;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+}
+.my-text{
+  color: #666;
+}

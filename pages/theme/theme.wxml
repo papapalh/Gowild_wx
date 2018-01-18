@@ -1,0 +1,8 @@
+<view class="container theme">
+  <view class="home-main-header">精选专题</view>
+  <block wx:for="{{themeInfo}}">
+      <view class="theme-list" bindtap="onThemeItemTap" data-id="{{item.id}}" data-name="{{item.name}}">
+        <image src="{{item.main_img}}"></image>
+      </view>
+  </block>
+</view>

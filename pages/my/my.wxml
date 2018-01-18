@@ -1,0 +1,40 @@
+<view class='container-main'>
+  <view class="container my-container" >
+    <view class="my-header">
+      <view class='my-title'>该小程序旨在让用户了解更多产品，了解产品内容</view>
+    </view>
+    <view class='my-item'>
+      <view>名称</view>
+      <view class='my-text'>
+        gh_dea1bhr90bhsfs
+      </view>
+    </view>
+    <view class='my-item'>
+      <view>开发者</view>
+      <view class='my-text'>
+        hong.li
+      </view>
+    </view>
+    <view class='my-item'>
+      <view>服务及数据由以下提供</view>
+      <view class='my-text'>
+        http://39.106.166.214/
+      </view>
+    </view>
+    <view class='my-item'>
+      <view>更新时间</view>
+      <view class='my-text'>
+        2018年1月15日
+      </view>
+    </view>
+    <view class='my-item'>
+      <view>法律相关</view>
+      <view class='my-text'>
+        如有侵权，请联系 yayalihong@126.com 删除
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <loading hidden="{{loadingHidden}}">
+  加载中...
+</loading> -->
