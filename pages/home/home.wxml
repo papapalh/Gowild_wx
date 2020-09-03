@@ -14,7 +14,7 @@
       <view class="home-main-header">精选主题</view>
       <view class="theme-box">
         <block wx:for="{{themeArr}}">
-          <view wx:if="{{item.only == '11'}}" class="theme-item big" bindtap="onThemesItemTap" data-id="{{item.id}}" data-name="{{item.name}}">
+          <view wx:if="{{item.only == '99'}}" class="theme-item big" bindtap="onThemesItemTap" data-id="{{item.id}}" data-name="{{item.name}}">
             <image src="{{item.main_img}}"></image>
           </view>
           <view wx:else class="theme-item" bindtap="onThemesItemTap" data-id="{{item.id}}" data-name="{{item.name}}">

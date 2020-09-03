@@ -16,6 +16,7 @@
 .theme-list > image {
   height: 300rpx;
   padding: 10rpx;
+  width: 640rpx;
 }
 
 .home-main-header{

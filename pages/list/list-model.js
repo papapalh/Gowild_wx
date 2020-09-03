@@ -7,13 +7,8 @@ class List extends Base {
 
   /*商品*/
   getListData(id, callback) {
-    var param = {
-      url: 'theme/get/' + id,
-      sCallback: function (data) {
-        callback && callback(data);
-      }
-    };
-    this.request(param);
+    var data = ["https://img2020.cnblogs.com/blog/1071918/202006/1071918-20200601211711758-931714898.png"]
+    callback(data)
   }
 };
 

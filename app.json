@@ -8,12 +8,7 @@
     "pages/list/list"
   ],
   "window": {
-    "navigationBarTitleText": "",
-    "navigationBarTextStyle": "#FFFFFF",
-    "navigationBarBackgroundColor": "#AB956D",
-    "backgroundColor": "#FFFFFF",
-    "backgroundTextStyle": "dark",
-    "enablePullDownRefresh": true
+    "navigationBarTitleText": ""
   },
   "tabBar": {
     "list": [
@@ -54,5 +49,5 @@
     "uploadFile": 20000,
     "downloadFile": 20000
   },
-  "debug": true
+  "debug": false
 }

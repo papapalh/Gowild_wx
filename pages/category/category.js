@@ -1,10 +1,10 @@
-import { Category } from 'category-model.js';
-var category = new Category();  //实例化 home 的推荐页面
+import { Base } from '../../utils/base';
+var base = new Base();
+import { CategoryData } from '../../database/category-data'
 Page({
   data: {
     transClassArr: ['tanslate0', 'tanslate1', 'tanslate2', 'tanslate3', 'tanslate4', 'tanslate5'],
     currentMenuIndex: 0,
-    loadingHidden: false,
   },
   onLoad: function () {
     this._loadData();
@@ -12,20 +12,16 @@ Page({
 
   /*加载所有数据*/
   _loadData: function (callback) {
-    var that = this;
-    category.getCategoryType((categoryData) => {
-
-      that.setData({
-        categoryTypeArr: categoryData,
-        loadingHidden: true
-      });
+    //获取所有分类
+    this.setData({
+      categoryTypeArr: CategoryData.CategoryData,
     });
   },
 
   /*切换分类*/
   changeCategory: function (event) {
-    var index = category.getDataSet(event, 'index'),
-      id = category.getDataSet(event, 'id')//获取data-set
+    var index = base.getDataSet(event, 'index'),
+      id = base.getDataSet(event, 'id')//获取data-set
     this.setData({
       currentMenuIndex: index
     });
@@ -33,25 +29,17 @@ Page({
 
   /*跳转到商品详情*/
   onProductsItemTap: function (event) {
-    var id = category.getDataSet(event, 'id');
+    var id = base.getDataSet(event, 'id');
     wx.navigateTo({
       url: '../product/product?id=' + id
     })
   },
 
-  // /*下拉刷新页面*/
-  // onPullDownRefresh: function () {
-  //   this._loadData(() => {
-  //     wx.stopPullDownRefresh()
-  //   });
-  // },
-
-  // //分享效果
-  // onShareAppMessage: function () {
-  //   return {
-  //     title: '零食商贩 Pretty Vendor',
-  //     path: 'pages/category/category'
-  //   }
-  // }
-
+  //分享效果
+  onShareAppMessage: function () {
+    return {
+      title: '静静的店铺',
+      path: 'pages/category/category'
+    }
+  },
 })

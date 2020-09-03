@@ -1,6 +1,7 @@
-import { Home } from 'home-model.js';
-var home = new Home(); //实例化 首页 对象
-// pages/home/home.js
+import { HomeData } from '../../page-data/home-data';
+import { Base } from '../../utils/base.js';
+var base = new Base();
+
 Page({
   data: {
     loadingHidden: false
@@ -13,43 +14,36 @@ Page({
   },
 
   _loadData: function (callback) {
-    var that = this;
-    // 获得bannar信息
-    home.getBannerData((data) => {
-      console.log(data);
-      that.setData({
-        bannerArr: data,
-      });
+
+    //Banner 信息
+    this.setData({
+      bannerArr: HomeData.BannerData
     });
+
     // 获取栏目信息
-    home.getThemeData((data) => {
-      that.setData({
-        themeArr: data,
-      });
+    this.setData({
+      themeArr: HomeData.ThemeData,
     });
-    // 获取商品热门信息
-    home.getProductData((data) => {
-      that.setData({
-        productArr: data,
-      });
+
+    //商品信息
+    this.setData({
+      productArr: HomeData.ProductData,
     });
   },
 
   // 跳转商品详情
   onProductsItemTap: function (event) {
-    var id = home.getDataSet(event, 'id');
+    var id = base.getDataSet(event, 'id');
     wx.navigateTo({
       url: '../product/product?id=' + id
     })
   },
-  /*跳转到主题列表*/
+  // /*跳转到主题列表*/
   onThemesItemTap: function (event) {
-    var id = home.getDataSet(event, 'id');
-    var name = home.getDataSet(event, 'name');
+    var id = base.getDataSet(event, 'id');
+    var name = base.getDataSet(event, 'name');
     wx.navigateTo({
       url: '../list/list?id=' + id + '&name=' + name
     })
   },
-
-
 })

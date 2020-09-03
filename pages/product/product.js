@@ -1,5 +1,6 @@
 import { Product } from 'product-model.js';
 var WxParse = require('../tpls/wxParse/wxParse.js');
+import { ProductData } from '../../database/product-data';
 
 var product = new Product();  //实例化 商品详情 对象
 Page({
@@ -19,20 +20,17 @@ Page({
 
   /*加载所有数据*/
   _loadData: function (callback) {
-    var that = this;
-    product.getDetailInfo(this.data.id, (data) => {
-      // 绑定商品详情数据
-      WxParse.wxParse('details', 'html', data.details, that, 5);
-      // 绑定产品参数数据
-      WxParse.wxParse('params', 'html', data.params, that, 5);      
-      // 绑定售后保障数据
-      WxParse.wxParse('custormer', 'html', data.custormer, that, 5);      
-      that.setData({
-        product: data,
-      });
-      callback && callback();
+    // 绑定商品详情数据
+    WxParse.wxParse('details', 'html', ProductData.ProductData[this.data.id].details, this, 5);
+    // 绑定产品参数数据
+    WxParse.wxParse('params', 'html', ProductData.ProductData[this.data.id].params, this, 5);      
+    // 绑定售后保障数据
+    WxParse.wxParse('custormer', 'html', ProductData.ProductData[this.data.id].custormer, this, 5);      
+    this.setData({
+      product: ProductData.ProductData[this.data.id],
     });
   },
+
   //切换详情面板
   onTabsItemTap: function (event) {
     var index = product.getDataSet(event, 'index');
@@ -40,9 +38,4 @@ Page({
       currentTabsIndex: index
     });
   },
-
-
-
 })
-
-
